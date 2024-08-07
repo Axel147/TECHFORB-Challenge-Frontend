@@ -1,0 +1,271 @@
+body{
+  background-image: url('../../../assets/wallpaper_login.png');
+  background-size: contain;
+  background-position: -580px;
+  background-repeat: no-repeat;
+}
+
+.box_container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#33a2aac6, #106f76d7);
+}
+
+.box_1{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: auto;
+  color: white;
+}
+
+.box_text_left{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 20px;
+  gap: 20px;
+}
+
+.title{
+  display: flex;
+}
+
+.title h1{
+  font-size: 50px;
+  width: 100%;
+  margin: 0;
+}
+
+.sub_title p{
+  font-size: 16px;
+  margin: 0;
+}
+
+.icon_text{
+  display: flex;
+  gap: 12px;
+}
+.icon_text h3{
+  font-size: 20px;
+  margin: 0;
+}
+
+.icon_text p{
+  font-size: 15px;
+  margin: 0;
+}
+
+.icon .mat-icon{
+  color: #FFB84B;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.box_2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: auto;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  z-index: 2;
+  background-color: white;
+}
+
+.box_text_left{
+  width: 50%;
+}
+
+.title_login{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title_login h1{
+  font-size: 37px;
+  margin: 0;
+}
+
+.title_login p{
+  font-size: 25px;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.email_password_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.password .mat-icon{
+  margin: 10px;
+}
+
+.button_login{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button_login a{
+  color: black;
+  text-decoration: none;
+}
+
+.button_login button{
+  background-color: #33A3AA;
+  color: white;
+  border-radius: 12px;
+  font-size: 18px;
+  width: 164px;
+  height: 48px;
+}
+
+.privacy_policy{
+  font-size: 12px;
+}
+
+.privacy_policy span{
+  color: #84818A;
+}
+
+.sign_in{
+  display: flex;
+  justify-content: space-around;
+}
+
+.sign_in a{
+  color: #33A3AA;
+  cursor: pointer;
+}
+
+.privacy_policy a{
+  color: #33A3AA;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+@media(max-width: 1440px){
+  body{
+    background-position: -580px;
+    background-size: 100vw 100vh;
+  }
+
+}
+
+@media(max-width: 1280px){
+  body{
+    background-attachment: fixed;
+    position: relative;
+    background-size: 100vw 100vh;
+    background-position: 0px;
+  }
+
+  .box_container{
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .box_1{
+    display: none;
+  }
+
+  .box_2{
+    height: 80%;
+    width: 550px;
+    border-radius: 20px;
+  }
+
+  .box_text_left{
+    width: 90%;
+    align-items: center;
+  }
+
+}
+
+@media(max-width: 430px){ /*iPhone 14 & 15 Pro - 1 */
+
+  body{
+    background-image: none;
+  }
+
+  .box_2{
+    height: 90%;
+  }
+
+  .box_text_left{
+    height: 100%;
+  }
+
+  .box_container{
+    background-image: none;
+  }
+
+  .title_login{
+    height: 30%;
+    justify-content: flex-end;
+  }
+
+  .title_login h1{
+    display: none;
+  }
+
+  .title_login p{
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .form{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .email_password_container{
+    height: 70%;
+    justify-content: center;
+  }
+
+  .button_login{
+    justify-content: flex-end;
+  }
+
+  .button_login a{
+    display: none;
+  }
+
+
+  .button_login button{
+    width: 353px;
+    height: 52px;
+  }
+
+  .sign_in{
+    display: none;
+  }
+
+  .privacy_policy{
+    display: none;
+  }
+}

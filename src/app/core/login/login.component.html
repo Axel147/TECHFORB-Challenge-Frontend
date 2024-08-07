@@ -1,0 +1,91 @@
+<body>
+  <section class="box_container">
+    <div class="box_1">
+      <div class="box_text_left">
+        <div class="title">
+          <h1>Iniciar sesión</h1>
+        </div>
+        <div class="sub_title">
+          <p>Nos alegra tenerte de vuelta y estamos listos para atender tus
+            necesidades. Inicia sesión y continúa aprovechando al máximo
+            nuestra
+            plataforma.</p>
+        </div>
+        <div class="icon_text">
+          <div class="icon">
+            <mat-icon aria-hidden="false" fontIcon="dynamic_form"
+              style="color: #FFB84B;"></mat-icon>
+          </div>
+          <div class="text">
+            <h3>Monitorieo integral</h3>
+            <p>Administra, monitorea multiples plantas de forma
+              centralizada</p>
+          </div>
+        </div>
+        <div class="icon_text">
+          <div class="icon">
+            <mat-icon aria-hidden="false" fontIcon="stars"></mat-icon>
+          </div>
+          <div class="text">
+            <h3>Notificaciones en tiempo real</h3>
+            <p>Recibi notificaciones en tiempo real sobre las mediciones</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box_2">
+      <div class="box_text_left">
+        <div class="title_login">
+          <h1>Portal de monitoreo</h1>
+          <p>Iniciar sesión</p>
+        </div>
+
+        <form [formGroup]="loginForm" class="form" (ngSubmit)="onLogin()">
+          <div class="email_password_container">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Luciano@email.com"
+                formControlName="email"
+                (blur)="isValidField('email')"
+                required />
+              <mat-error
+                *ngIf="isValidField('email')">{{getErrorMessage('email')}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="password">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'"
+                formControlName="password" />
+              <i mat-icon-button matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </i>
+            </mat-form-field>
+            <mat-error *ngIf="isValidField('password')">
+              <strong>{{ getErrorMessage('password') }}</strong>
+            </mat-error>
+          </div>
+          <div class="button_login">
+            <a href>¿Olvidaste tu contraseña?</a>
+            <button mat-flat-button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+          </div>
+          <div class="sign_in">
+            <span>¿No tienes una cuenta? <a (click)="navigate()">Registrate.</a>
+            </span>
+          </div>
+          <div class="privacy_policy">
+            <span>Protegido por reCAPTCHA y sujeto a la <a href>Politica de
+                Privacidad</a>
+              y <a href>Condiciones.</a>
+
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+</body>

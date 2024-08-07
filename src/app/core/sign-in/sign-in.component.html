@@ -1,0 +1,109 @@
+
+<section class="formulario">
+
+  <!-- <div class="button_login">
+    <p>¿Tienes una cuenta?</p>
+    <button mat-flat-button>Iniciar sesión</button>
+  </div> -->
+  <div class="box_1">
+    <div class="titulo">
+      <h2><strong>Crear una Cuenta</strong></h2>
+    </div>
+
+    <form [formGroup]="signInForm" (ngSubmit)="registerNewUser()" class="form"
+      name="login">
+
+      <div class="inputs">
+
+        <div class="box_form">
+          <mat-form-field class="example-full-width">
+            <mat-label for>Nombre</mat-label>
+            <input class="mat-input" type="text" matInput
+              formControlName="name" tabindex=”0”>
+            <mat-error *ngIf="isValidField('name')">
+              <strong>{{ getErrorMessage('name') }}</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="box_form">
+          <mat-form-field class="example-full-width">
+            <mat-label for>Apellido</mat-label>
+            <input class="mat-input" type="text" matInput
+              formControlName="lastname" tabindex=”0”>
+            <mat-error *ngIf="isValidField('lastname')">
+              <strong>{{ getErrorMessage('lastname') }}</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="box_form">
+          <mat-form-field class="example-full-width">
+            <mat-label for>Email</mat-label>
+            <input class="mat-input" type="email" matInput
+              formControlName="email" placeholder="Ej. delorean@gmail.com"
+              tabindex=”0”>
+            <mat-error *ngIf="isValidField('email')">
+              <strong>{{ getErrorMessage('email') }}</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="box_form">
+          <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password"
+              [type]="hide ? 'password' : 'text'" formControlName="password"
+              tabindex=”0”>
+            <i mat-icon-button matSuffix (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </i>
+            <mat-error *ngIf="isValidField('password')">
+              <strong>{{ getErrorMessage('password') }}</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="box_form">
+          <mat-form-field>
+            <mat-label>Repetir Contraseña</mat-label>
+            <input matInput type="password"
+              [type]="hide2 ? 'password' : 'text'"
+              formControlName="confirmPassword" tabindex=”0”>
+            <i mat-icon-button matSuffix (click)="hide2 = !hide2"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+              <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </i>
+            <mat-error *ngIf="isValidField('confirmPassword')">
+              <strong>{{ getErrorMessage('confirmPassword') }}</strong>
+            </mat-error>
+            <mat-error
+              *ngIf="signInForm.get('confirmPassword')?.hasError('matchOther')">
+              <strong>Las contraseñas no coinciden</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <div class="validacion">
+        <ul>
+          <li type="disc">Usa al menos 1 mayúscula</li>
+          <li type="disc">Usa al menos 1 minúscula</li>
+          <li type="disc">Usa al menos 1 número</li>
+          <li type="disc">Usa 8 o más caracteres</li>
+        </ul>
+      </div>
+
+      <div class="sign_in">
+        <button mat-flat-button [disabled]="signInForm.invalid"
+          type="submit" tabindex=”0”>Crear Cuenta</button>
+      </div>
+      <div class="login">
+        <p>¿Tienes una cuenta?</p>
+        <a routerLink='/login' tabindex=”0”><strong>Iniciar Sesión</strong></a>
+      </div>
+    </form>
+  </div>
+</section>
