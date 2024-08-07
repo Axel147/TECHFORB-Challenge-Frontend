@@ -1,4 +1,4 @@
-const BASE_URL = 'https://techforb-challenge-backend.onrender.com/user';
+const BASE_URL = 'https://techforb-challenge-backend.onrender.com/';
 
 // Login de usuarios
 export const USER_LOGIN_URL = BASE_URL + 'auth/login';
