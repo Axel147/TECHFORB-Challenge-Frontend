@@ -15,11 +15,11 @@ export const checkLoginGuard: CanActivateFn = (route, state) => {
     take(1), map((user: UserResponse | null) => {
       if(!user){
         console.log('no permitido');
-        return true;
+        return false;
       } else {
         console.log('permitido');
         router.navigate(['/dashboard']);
-        return false;
+        return true;
       }
     }),
     catchError((error) => {
