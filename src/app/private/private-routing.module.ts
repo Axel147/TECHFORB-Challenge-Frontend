@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '', component: PrivateComponent, children:
     [
       { path: '', redirectTo: '', pathMatch: 'full' },
-      { path: '', component: DashboardComponent, /*canActivate: [checkLoginGuard]*/ },
+      { path: '', component: DashboardComponent },
     ]
   }
 ];
